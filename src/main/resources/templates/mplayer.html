@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th = "http://www.thymeleaf.org" xmlns:sec = "http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>音频播放器</title>
+    <link rel="stylesheet" type="text/css" href="music/styles.css" media="all" >
+</head>
+<body>
+
+<div class="page">
+    <br><br><br><br>
+    <section class="demo">
+        <div id="myAudio" style="margin:0 auto;">
+			<audio>
+				<source title="未知音乐" th:src="${path}" />
+			</audio>
+		</div>
+		<script type="text/javascript" src="music/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="music/AudioPlayer.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#myAudio").initAudio();
+			});
+		</script>
+    </section>
+
+</div>
+</body>
+</html>
